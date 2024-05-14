@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="https://cdn.iconscout.com/icon/free/png-256/free-node-js-1174925.png?f=webp">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        
+        
+        <div class=" w-full h-screen bg-slate-900">
+            <div class="">
+                <form action="/create" method="post" class="  flex flex-col items-center justify-center">
+                    <input type="text" class=" mt-7 px-2 w-96 h-9 rounded-md text-white  bg-slate-900 border-2 border-slate-600 outline-none" placeholder="Entre Title" name="title">
+                    <textarea placeholder="Entre Description" class=" mt-3 px-2 w-96 h-14 rounded-md text-white  bg-slate-900 border-2 border-slate-600 outline-none"  name="details"></textarea>
+                    <input class=" mt-3 px-5 py-2 rounded-md bg-blue-600 text-white " value="Create Task" type="submit"/>
+                </form>
+            </div>
+                <div class=" flex flex-wrap justify-center pt-5 gap-4 h-screen w-full">
+                    <% if( files.length > 0 ){ %>
+                        <% files.forEach(function(val){ %>
+                                <div class=" w-48  bg-slate-900  h-56 text-slate-100 p-3 rounded-lg border-2 border-slate-200 ">
+                                    <h4 class="font-medium text-lg" ><%= val %></h4>
+                                    <h5 class=" text-md text-slate-300" > Nulla dolor velit adipisicing duis excepteur esse in duis nostrud occaecat mollit incididunt deserunt sent. </h5>
+                                    <a class=" text-sm text-blue-400" href="/file/<%= val %>">Read more...</a>
+                                </div>                            
+                        <% }) %>
+                        <% }else{ %>
+                            <div class=" pt-20 "><p class=" text-center content-center text-slate-400"> No Task Available </p></div>
+                        
+                        <% } %>
+                </div>    
+        </div>
+
+
+
+        <
+    </body>
+</html>
